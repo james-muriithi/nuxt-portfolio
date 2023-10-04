@@ -1,4 +1,7 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
+import UnpluginComponentsVite from "unplugin-vue-components/vite";
+import IconsResolver from "unplugin-icons/resolver";
+import Icons from "unplugin-icons/vite";
+
 export default defineNuxtConfig({
   devtools: { enabled: true },
   meta: [
@@ -37,5 +40,21 @@ export default defineNuxtConfig({
       tailwindcss: {},
       autoprefixer: {},
     },
+  },
+  vite: {
+    optimizeDeps: { exclude: ["fsevents"] },
+    plugins: [
+      UnpluginComponentsVite({
+        dts: true,
+        resolvers: [
+          IconsResolver({
+            prefix: "Icon",
+          }),
+        ],
+      }),
+      Icons({
+        autoInstall: true,
+      }),
+    ],
   },
 });
