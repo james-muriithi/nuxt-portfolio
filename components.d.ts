@@ -10,9 +10,7 @@ declare module 'vue' {
     'IconAkarIcons:envelope': typeof import('~icons/akar-icons/envelope')['default']
     'IconAkarIcons:githubFill': typeof import('~icons/akar-icons/github-fill')['default']
     'IconAkarIcons:linkedinv2Fill': typeof import('~icons/akar-icons/linkedinv2-fill')['default']
-    'IconIconamoon:linkedin': typeof import('~icons/iconamoon/linkedin')['default']
     'IconIconamoon:menuBurgerHorizontal': typeof import('~icons/iconamoon/menu-burger-horizontal')['default']
-    'IconIon:socialLinkedinOutline': typeof import('~icons/ion/social-linkedin-outline')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }

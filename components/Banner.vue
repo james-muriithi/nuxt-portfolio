@@ -1,5 +1,5 @@
 <template>
-  <section id="banner" class="mt-8 lg:mt-12">
+  <section id="banner" class="mt-8 lg:mt-20">
     <div class="grid grid-cols-12 gap-x-4">
       <div class="col-span-12 md:col-span-6">
         <h1 class="text-5xl xl:text-6xl font-extrabold greeting">
@@ -16,7 +16,7 @@
             href="
                 https://github.com/james-muriithi/"
             target="_blank"
-            class="bg-[#333333]"
+            class="bg-dark text-white"
           >
             <IconAkar-icons:github-fill />
           </a>
@@ -25,22 +25,20 @@
             href="
                 https://www.linkedin.com/in/james-muriithi/"
             target="_blank"
-            class="bg-[#0e76a8]"
+            class="bg-[#0e76a8] text-white"
           >
             <IconAkar-icons:linkedinv2-fill />
           </a>
           <a
-            href="
-                https://www.linkedin.com/in/james-muriithi/"
-            target="_blank"
-            class="bg-[#ea4335]"
+            href="mailto:muriithijames123@gmail.com"
+            class="bg-[#ea4335] text-white"
           >
             <IconAkar-icons:envelope />
           </a>
         </div>
         <div class="mt-8">
           <div class="flex gap-4">
-            <nuxt-link to="/" class="btn"> SEE MY RESUME </nuxt-link>
+            <nuxt-link to="/" class="btn text-white"> SEE MY RESUME </nuxt-link>
           </div>
         </div>
       </div>
@@ -68,7 +66,7 @@ p {
   }
 }
 .btn {
-  @apply py-3 px-5 border dark:border-[#56198b] dark:bg-transparent rounded-lg text-base font-bold transition-all  duration-300 ease-in-out;
-  @apply dark:hover:text-white dark:hover:bg-[#172a45] bg-[#56198b] border-[#56198b] hover:bg-white hover:text-black;
+  @apply py-3 px-5 border dark:border-primary dark:bg-transparent rounded-lg text-base font-bold transition-all  duration-300 ease-in-out;
+  @apply dark:hover:text-white dark:hover:bg-[#172a45] bg-primary border-primary hover:bg-white hover:text-black;
 }
 </style>

@@ -19,7 +19,7 @@
       :class="open ? 'block' : 'hidden'"
       class="w-full flex-grow md:flex md:items-center md:w-auto"
     >
-      <div class="ml-auto">
+      <div class="ml-auto flex items-center">
         <nuxt-link
           v-for="item in menuItems"
           :key="item.name"
@@ -28,6 +28,10 @@
         >
           {{ item.name }}
         </nuxt-link>
+        <ThemeToggle
+          :model-value="darkMode"
+          @update:model-value="setDarkMode"
+        />
       </div>
     </div>
   </nav>
@@ -65,6 +69,33 @@ const menuItems: MenuItem[] = [
     link: "#responsive-header",
   },
 ];
+
+// theme
+type Theme = "light" | "dark" | undefined;
+
+const LOCAL_STORAGE_THEME_KEY = "theme";
+
+const theme = useLocalStorage<Theme>(LOCAL_STORAGE_THEME_KEY, undefined);
+
+const darkMode = ref<boolean>(theme.value === "dark");
+
+const setDarkMode = (value: boolean) => {
+  darkMode.value = value;
+  theme.value = value ? "dark" : "light";
+  if(process.client) {
+    document.documentElement.classList.toggle("dark", value);
+  }
+};
+setDarkMode(theme.value === "dark");
+
+onMounted(() => {
+  if (theme.value === undefined) {
+    theme.value = window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light";
+  }
+  setDarkMode(theme.value === "dark");
+});
 </script>
 
 <style lang="scss" scoped>
@@ -75,7 +106,7 @@ const menuItems: MenuItem[] = [
   }
 
   span.logo-name {
-    @apply text-gray-100 px-1 text-2xl lg:text-3xl font-bold text-gray-300;
+    @apply dark:text-gray-100 px-1 text-2xl lg:text-3xl font-bold text-primary;
     font-family: "Agustina Regular";
   }
 }
