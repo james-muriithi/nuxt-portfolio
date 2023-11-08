@@ -86,7 +86,6 @@ const setDarkMode = (value: boolean) => {
     document.documentElement.classList.toggle("dark", value);
   }
 };
-setDarkMode(theme.value === "dark");
 
 onMounted(() => {
   if (theme.value === undefined) {

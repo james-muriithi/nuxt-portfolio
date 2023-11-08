@@ -1,6 +1,7 @@
 <template>
   <div>
     <Banner />
+    <SkillsSection />
   </div>
 </template>
 
