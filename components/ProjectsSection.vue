@@ -35,36 +35,29 @@
 </template>
 
 <script setup lang="ts">
-const projects = [
-  {
-    title: "Project 1",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
-    image: "https://picsum.photos/200/300",
-    link: "https://picsum.photos/200/300",
-  },
-  {
-    title: "Project 2",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. fffff fffsdeed weafgewf 3wegweqg",
-    image: "https://picsum.photos/200/300",
-    link: "https://picsum.photos/200/300",
-  },
-  {
-    title: "Project 3",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
-    image: "https://picsum.photos/200/300",
-    link: "https://picsum.photos/200/300",
-  },
-  {
-    title: "Project 4",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
-    image: "https://picsum.photos/200/300",
-    link: "https://picsum.photos/200/300",
-  },
-];
+import { useFirestore, useCollection } from 'vuefire';
+import { collection, query, limit, orderBy, getDocs } from 'firebase/firestore';
+
+interface Project {
+  title: string;
+  description: string;
+  image: string;
+  link: string;
+}
+
+const firestore = useFirestore();
+
+const collectionRef = collection(firestore, 'projects');
+
+const collectionQuery = query(collectionRef, orderBy('createdAt', 'desc'),limit(6));
+
+const projects:Ref<Project[]> = ref([]);
+
+const collectionArr = useCollection<Project[]>(collectionQuery);
+
+watch(collectionArr, (value) => {
+  projects.value = value;
+});
 </script>
 
 <style scoped lang="scss">
