@@ -2,6 +2,7 @@
   <div>
     <Banner />
     <SkillsSection />
+    <ProjectsSection />
   </div>
 </template>
 

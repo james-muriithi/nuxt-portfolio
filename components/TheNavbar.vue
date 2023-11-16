@@ -30,6 +30,7 @@
         </nuxt-link>
         <ThemeToggle
           :model-value="darkMode"
+          class="hidden"
           @update:model-value="setDarkMode"
         />
       </div>
@@ -46,7 +47,7 @@ interface MenuItem {
 const menuItems: MenuItem[] = [
   {
     name: "Skills",
-    link: "#responsive-header",
+    link: "#skills",
   },
   //   {
   //     name: "Experiences",
@@ -58,7 +59,7 @@ const menuItems: MenuItem[] = [
   //   },
   {
     name: "Projects",
-    link: "#responsive-header",
+    link: "#projects",
   },
   {
     name: "Achievements",

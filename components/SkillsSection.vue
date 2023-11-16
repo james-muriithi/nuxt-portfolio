@@ -1,25 +1,37 @@
 <template>
-  <section id="skills" class="mt-20 lg:mt-28">
-    <div class="grid grid-cols-12 gap-10">
-      <div class="col-span-12 md:col-span-6 order-2 md:order-1">
+  <section id="skills" class="mt-20 lg:mt-40">
+    <div class="grid md:grid-cols-2 gap-10">
+      <div class="order-2 md:order-1">
         <img src="@/assets/images/developerActivity.svg" />
       </div>
-      <div class="col-span-12 md:col-span-6 order-1">
+      <div class="order-1">
         <h2 class="text-4xl">What i do</h2>
-        <p class="dark:text-gray-600 text-gray-400 uppercase mt-3">
+        <p class="dark:text-gray-500 text-gray-400 uppercase mt-3">
           AMBITIOUS FULL STACK DEVELOPER WHO WANTS TO EXPLORE EVERY TECH STACK
         </p>
         <div class="mt-4 flex flex-wrap gap-y-5 gap-x-7">
           <div
             v-for="skill in skills"
             :key="skill.name"
-            class="dark:text-gray-600 text-gray-400 icon"
+            class="dark:text-gray-500 text-gray-400 icon"
           >
             <span v-html="skill.icon" class="text-6xl" />
             <p class="text-sm text-center">
               {{ skill.name }}
             </p>
           </div>
+        </div>
+
+        <div class="mt-10 dark:text-gray-300">
+          <ul>
+            <li>
+              Develop highly interactive Front end / User Interfaces for your
+              web applications
+            </li>
+            <li>
+              Progressive Web Applications ( PWA ) in normal and SPA Stacks
+            </li>
+          </ul>
         </div>
       </div>
     </div>
@@ -68,6 +80,18 @@ const skills = [
   @apply transition-all duration-300 ease-in-out cursor-pointer;
   &:hover {
     @apply text-blue-500;
+  }
+}
+ul {
+  @apply mt-5;
+  li {
+    &:not(:last-child) {
+      @apply mb-3;
+    }
+    &:before {
+      @apply mr-2;
+      content: "⚡";
+    }
   }
 }
 </style>
