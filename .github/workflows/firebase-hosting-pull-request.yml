@@ -27,6 +27,8 @@ jobs:
           FIREBASE_MEASUREMENT_ID: ${{ secrets.FIREBASE_MEASUREMENT_ID }}
           FIREBASE_API_KEY: ${{ secrets.FIREBASE_API_KEY }}
           FIREBASE_PROJECT_ID: ${{ secrets.FIREBASE_PROJECT_ID }}
+          GITHUB_ACCESS_TOKEN: ${{ secrets.GIT_ACCESS_TOKEN }}
+
         run: pnpm generate
         
       - name: 📁 List output files
