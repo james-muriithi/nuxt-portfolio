@@ -11,9 +11,6 @@ declare module 'vue' {
     'IconAkarIcons:githubFill': typeof import('~icons/akar-icons/github-fill')['default']
     'IconAkarIcons:linkedinv2Fill': typeof import('~icons/akar-icons/linkedinv2-fill')['default']
     'IconIconamoon:menuBurgerHorizontal': typeof import('~icons/iconamoon/menu-burger-horizontal')['default']
-    'IconMdi:phone': typeof import('~icons/mdi/phone')['default']
-    'IconMdi:vue': typeof import('~icons/mdi/vue')['default']
-    'IconMdi:vuejs': typeof import('~icons/mdi/vuejs')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }

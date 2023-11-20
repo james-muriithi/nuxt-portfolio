@@ -23,12 +23,14 @@ jobs:
         with:
           version: 6.0.2
           run_install: true
+      - name: 🔨 Generate production bundle
         env:
           FIREBASE_APP_ID: ${{ secrets.FIREBASE_APP_ID }}
           FIREBASE_MEASUREMENT_ID: ${{ secrets.FIREBASE_MEASUREMENT_ID }}
           FIREBASE_API_KEY: ${{ secrets.FIREBASE_API_KEY }}
           FIREBASE_PROJECT_ID: ${{ secrets.FIREBASE_PROJECT_ID }}
-      - run: pnpm generate
+        run: pnpm generate
+        
       - name: 📁 List output files
         run: find .output/public -print
 
