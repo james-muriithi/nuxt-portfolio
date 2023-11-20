@@ -36,7 +36,7 @@
 
 <script setup lang="ts">
 import { useFirestore, useCollection } from 'vuefire';
-import { collection, query, limit, orderBy, getDocs } from 'firebase/firestore';
+import { collection, query, limit, orderBy } from 'firebase/firestore';
 
 interface Project {
   title: string;

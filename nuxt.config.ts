@@ -42,8 +42,8 @@ export default defineNuxtConfig({
       ],
     },
   },
-  css: ["~/assets/css/main.css"],
-  modules: ["@vueuse/nuxt", "nuxt-vuefire"],
+  css: ["~/assets/css/main.scss"],
+  modules: ["@vueuse/nuxt", "nuxt-vuefire", "@nuxtjs/apollo"],
   postcss: {
     plugins: {
       tailwindcss: {},
@@ -75,6 +75,18 @@ export default defineNuxtConfig({
       messagingSenderId: process.env.FIREBASE_MESSAGE_SENDER_ID,
       appId: process.env.FIREBASE_APP_ID,
       measurementId: process.env.FIREBASE_MEASUREMENT_ID,
+    },
+  },
+  apollo: {
+    clients: {
+      default: {
+        httpEndpoint: 'https://api.github.com/graphql',
+        httpLinkOptions: {
+          headers: {
+            authorization: `Bearer ${process.env.GITHUB_ACCESS_TOKEN}`,
+          },
+        },
+      }
     },
   },
 });

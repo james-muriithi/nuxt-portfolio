@@ -15,6 +15,7 @@
     "@iconify-json/ion": "^1.1.12",
     "@iconify-json/mdi": "^1.1.55",
     "@nuxt/devtools": "latest",
+    "@nuxtjs/apollo": "5.0.0-alpha.8",
     "autoprefixer": "^10.4.16",
     "nuxt": "^3.7.4",
     "postcss": "^8.4.31",
