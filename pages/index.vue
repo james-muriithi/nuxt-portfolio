@@ -2,10 +2,9 @@
   <div>
     <Banner />
     <SkillsSection />
-    <!-- <ClientOnly> -->
-      <ProjectsSection />
-      <GithubProjects />
-    <!-- </ClientOnly> -->
+    <ProjectsSection />
+    <GithubProjects />
+    <Footer />
   </div>
 </template>
 

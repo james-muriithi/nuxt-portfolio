@@ -1,5 +1,9 @@
 <template>
-  <section id="projects" class="my-20 lg:my-40 w-full" v-if="!loading && !repos.length">
+  <section
+    id="projects"
+    class="my-20 lg:my-40 w-full"
+    v-if="!loading && repos.length"
+  >
     <div>
       <h2 class="text-4xl">Open Source Projects</h2>
       <div
@@ -49,5 +53,6 @@ if (!error.value) {
   repos.value = data.value?.user?.pinnedItems?.edges || [];
 }
 loading.value = false;
+console.log(data.value);
 </script>
 
