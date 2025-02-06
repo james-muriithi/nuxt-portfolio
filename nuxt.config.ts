@@ -4,6 +4,7 @@ import Icons from "unplugin-icons/vite";
 
 export default defineNuxtConfig({
   devtools: { enabled: true },
+
   app: {
     head: {
       htmlAttrs: {
@@ -42,14 +43,17 @@ export default defineNuxtConfig({
       ],
     },
   },
+
   css: ["~/assets/css/main.scss"],
   modules: ["@vueuse/nuxt", "nuxt-vuefire", "@nuxtjs/apollo"],
+
   postcss: {
     plugins: {
       tailwindcss: {},
       autoprefixer: {},
     },
   },
+
   vite: {
     optimizeDeps: { exclude: ["fsevents"] },
     plugins: [
@@ -66,6 +70,7 @@ export default defineNuxtConfig({
       }),
     ],
   },
+
   vuefire: {
     config: {
       apiKey: process.env.FIREBASE_API_KEY,
@@ -77,6 +82,7 @@ export default defineNuxtConfig({
       measurementId: process.env.FIREBASE_MEASUREMENT_ID,
     },
   },
+
   apollo: {
     clients: {
       default: {
@@ -89,4 +95,6 @@ export default defineNuxtConfig({
       }
     },
   },
+
+  compatibilityDate: "2025-02-06",
 });

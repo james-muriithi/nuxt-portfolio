@@ -17,7 +17,7 @@
     "@nuxt/devtools": "latest",
     "@nuxtjs/apollo": "5.0.0-alpha.8",
     "autoprefixer": "^10.4.16",
-    "nuxt": "^3.7.4",
+    "nuxt": "^3.15.4",
     "postcss": "^8.4.31",
     "sass": "^1.68.0",
     "tailwindcss": "^3.3.3",
@@ -32,5 +32,6 @@
     "unplugin-icons": "^0.17.0",
     "unplugin-vue-components": "^0.25.2",
     "vuefire": "^3.1.18"
-  }
+  },
+  "packageManager": "pnpm@8.12.0+sha1.7134f9b8d0b70bc7a1954f47af52123cd2b2acce"
 }
