@@ -7,7 +7,7 @@
         </h1>
         <div class="mt-10">
           <p class="text-xl md:text-2xl">
-            Fullstack Developer — Frontend heavy with vue.js, angular, react,
+            Fullstack Developer — Frontend heavy with vue.js, Nuxt, Next, angular, react,
             node, PHP and python
           </p>
         </div>
@@ -38,7 +38,7 @@
         </div>
         <div class="mt-8">
           <div class="flex gap-4">
-            <nuxt-link to="/" class="btn text-white"> SEE MY RESUME </nuxt-link>
+            <a href="https://drive.google.com/file/d/1veXD4IYkS-jZiqrQfKJZ51KHPOTHKEWX/view?usp=sharing" target="_blank" class="btn text-white"> SEE MY RESUME </a>
           </div>
         </div>
       </div>
